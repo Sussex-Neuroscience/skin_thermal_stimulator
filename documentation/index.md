@@ -9,12 +9,19 @@ This device is under development for studies in Psychology at the University of 
 
 
 
+## Building your own:
+
+Start by buying all the parts in the [bill of materials]{BOM} page.
+
 * [buying all parts](collecting_components.md){step}
 * [making the enclosure](printing_enclosure.md){step}
 * [soldering electronics](soldering_boards.md){step}
+* [prepare peltier module](prepare_peltier.md){step}
+
+## operating the system:
+
 * [prepare software](prepare_microcontroller.md){step}
 
-* [bill of materials]{BOM} page.
 
 
 
