@@ -1,5 +1,8 @@
 Affiliation: University of Sussex
 Authors:
-- Andre Maia Chagas
+  - Andre Maia Chagas
 Email: a.maia-chagas@sussex.ac.uk
 License: CERN-OHL-S-2.0
+PrimaryColor: '#f1502f'
+SecondaryColor: '#cccccc'
+HoverColor: '#555555'
