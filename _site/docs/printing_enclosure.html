@@ -2,42 +2,24 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Skin Thermal Stimulator</title>
+    <title>Untitled project</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="./static/Logo/favicon.ico" />
-<link rel="icon" type="image/png" href="./static/Logo/favicon-32x32.png" sizes="32x32" />
-<link rel="icon" type="image/png" href="./static/Logo/favicon-16x16.png" sizes="16x16" />
+    <link rel="shortcut icon" href="../static/Logo/favicon.ico" />
+<link rel="icon" type="image/png" href="../static/Logo/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="../static/Logo/favicon-16x16.png" sizes="16x16" />
 
-    <link href="./static/base-style.css" rel="stylesheet">
-    <link href="./static/site-style.css" rel="stylesheet">
-                <style>
-  :root {
-    --primary-color: #f1502f;
-  }
-</style>
-<style>
-  :root {
-    --secondary-color: #cccccc;
-  }
-</style>
-<style>
-  :root {
-    --hover-color: #555555;
-}
-</style>
-    
-        <script type="text/javascript" src="./static/search.js" defer=""></script>
+    <link href="../static/base-style.css" rel="stylesheet">
+    <link href="../static/site-style.css" rel="stylesheet">
+                    
+        <script type="text/javascript" src="../static/search.js" defer=""></script>
     </head>
 <body>
 <header class="site-header">
     <div class="wrapper header-wrapper" >
         <div class=header-text>
    
-    <h1 class="site-title">Skin Thermal Stimulator</h1>
-   
-    <p class="author">by Andre Maia Chagas</p>
-    <p class="affiliation">University of Sussex</p>
+    <h1 class="site-title">Untitled project</h1>
 </div>
             </div>
 </header>
@@ -53,11 +35,11 @@
                 </a>
                 <ul class="nav-list">
                 <li>
-    <a class="navhome" href="./">
-        Skin Thermal Stimulator
+    <a class="navhome" href="../">
+        Untitled project
     </a>
 </li>
-<li id="nav-search" :class="focused && searchTerm.length > 0 ? 'search-result-popout' : 'search'" v-scope v-on:vue:mounted="mounted('./')">
+<li id="nav-search" :class="focused && searchTerm.length > 0 ? 'search-result-popout' : 'search'" v-scope v-on:vue:mounted="mounted('../')">
   <input
     type="text"
     placeholder="Search..."
@@ -72,7 +54,7 @@
         <div v-if="searchResults.length === 0">No results.</div>
         <template v-for="(result, index) in searchResults">
             <li>
-                <a class="search-result" :href="`./${result.path}.html`">
+                <a class="search-result" :href="`../${result.path}.html`">
                <span v-for="crumb in result.breadCrumbs.slice(0, -1)">
                 ${crumb + ' > '}
                 </span>
@@ -85,35 +67,42 @@
         </template>
     </div>
 </li>
-<li class="not-active">
-    <a class="not-active" href="./index_BOM.html">
-        Bill of Materials
-    </a>
-    </li>
-<li class="not-active">
-    <a class="not-active" href="./collecting_components.html">
-        Test Page 1
-    </a>
-    </li>
 <li class="active">
-    <a class="active" href="./printing_enclosure.html">
-        Test Page 2
+    <a class="active" href="../docs/index.html">
+        Skin Thermal Stimulator
     </a>
-    </li>
-<li class="not-active">
-    <a class="not-active" href="./soldering_boards.html">
-        Test Page 2
-    </a>
-    </li>
-<li class="not-active">
-    <a class="not-active" href="./prepare_peltier.html">
-        Prepare peltier module
-    </a>
-    </li>
-<li class="not-active">
-    <a class="not-active" href="./prepare_microcontroller.html">
-        Prepare microcontroller
-    </a>
+        <ul class="sub-nav-list">
+                <li>
+            <a class="not-active" href="../docs/index_BOM.html">
+                Bill of Materials
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/collecting_components.html">
+                Test Page 1
+            </a>
+        </li>
+                <li>
+            <a class="active" href="../docs/printing_enclosure.html">
+                Test Page 2
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/soldering_boards.html">
+                Test Page 2
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/prepare_peltier.html">
+                Prepare peltier module
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/prepare_microcontroller.html">
+                Prepare microcontroller
+            </a>
+        </li>
+            </ul>
     </li>
 
                 </ul>
@@ -150,12 +139,9 @@
 <footer class="site-footer">
     <div class="wrapper">
         <a target="_blank" rel="noopener noreferrer" href="https://gitbuilding.io">
-    <img class="icon" src="./static/Logo/GitBuilding500x.png" alt="GitBuilding logo">
+    <img class="icon" src="../static/Logo/GitBuilding500x.png" alt="GitBuilding logo">
     <span class="doc-info">Documentation powered by GitBuilding</span>
 </a>
-    <p class="author">©2025 Andre Maia Chagas</p>
-    <p class="email">Contact: <a href="mailto:a.maia-chagas@sussex.ac.uk">a.maia-chagas@sussex.ac.uk</a></p>
-    <p class="license">Skin Thermal Stimulator is released under <a href="license.html">CERN-OHL-S-2.0</a>.</p>
 
     </div>
 </footer></body>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Untitled project</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../static/Logo/favicon.ico" />
+<link rel="icon" type="image/png" href="../static/Logo/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="../static/Logo/favicon-16x16.png" sizes="16x16" />
+
+    <link href="../static/base-style.css" rel="stylesheet">
+    <link href="../static/site-style.css" rel="stylesheet">
+                    
+        <script type="text/javascript" src="../static/search.js" defer=""></script>
+    </head>
+<body>
+<header class="site-header">
+    <div class="wrapper header-wrapper" >
+        <div class=header-text>
+   
+    <h1 class="site-title">Untitled project</h1>
+</div>
+            </div>
+</header>
+<div class="page-content">
+            <div>
+            <nav class="sidebar">
+                <a href="#" class="menu-icon">
+                <svg viewBox="0 0 18 15">
+                    <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                    <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                    <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+                </svg>
+                </a>
+                <ul class="nav-list">
+                <li>
+    <a class="navhome" href="../">
+        Untitled project
+    </a>
+</li>
+<li id="nav-search" :class="focused && searchTerm.length > 0 ? 'search-result-popout' : 'search'" v-scope v-on:vue:mounted="mounted('../')">
+  <input
+    type="text"
+    placeholder="Search..."
+    v-on:input="search($event.target.value)"
+    v-on:keypress="handleKeyPress"
+    v-on:keyup.esc="$event.target.blur()"
+    v-on:focus="handleFocus"
+    v-on:blur="handleBlur"
+    :value="searchTerm" />
+    <div class="search-results" v-if="focused && searchTerm.length > 0">
+        <div v-if="searchResults.length > 0">Results:</div>
+        <div v-if="searchResults.length === 0">No results.</div>
+        <template v-for="(result, index) in searchResults">
+            <li>
+                <a class="search-result" :href="`../${result.path}.html`">
+               <span v-for="crumb in result.breadCrumbs.slice(0, -1)">
+                ${crumb + ' > '}
+                </span>
+               ${result.title || result.breadCrumbs[result.breadCrumbs.length - 1]}
+                <p>
+                    <span v-for="node in result.highlightChars" :class="node.mark ? 'highlight' : ''" >${node.chars}</span>
+                </p>
+                </a>
+            </li>
+        </template>
+    </div>
+</li>
+<li class="active">
+    <a class="active" href="../docs/index.html">
+        Skin Thermal Stimulator
+    </a>
+        <ul class="sub-nav-list">
+                <li>
+            <a class="not-active" href="../docs/index_BOM.html">
+                Bill of Materials
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/collecting_components.html">
+                Test Page 1
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/printing_enclosure.html">
+                Test Page 2
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/soldering_boards.html">
+                Test Page 2
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/prepare_peltier.html">
+                Prepare peltier module
+            </a>
+        </li>
+                <li>
+            <a class="active" href="../docs/prepare_microcontroller.html">
+                Prepare microcontroller
+            </a>
+        </li>
+            </ul>
+    </li>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="wrapper">
+    <h1 id="prepare-microcontroller">Prepare microcontroller</h1>
+<p><div class=details-header>
+    <div class=details-thumb-outer>
+        <div class=details-thumb>
+            <img alt="page thumbnail" src="images/gh_repo001.jpg" title="" />
+        </div>
+    </div>
+<div class=other-details>
+    <div class=detail>
+        <b>Difficulty:</b> Easy
+    </div>
+    <div class=detail>
+        <b>Time required:</b> 30 Minutes
+    </div>
+    <div class=detail>
+        <b>Skills required:</b>
+        <ul>
+                    <li>Computer use</li>
+                </ul>
+    </div>
+</div>
+</div></p>
+<p>This system runs on a microcontroller called ESP32, specifically, the <a href="https://www.espboards.dev/esp32/esp32-wroom/" target="_blank" title="">ESP32-WROOM</a> model. </p>
+<p>For this application, the microcontroller runs custom code, written in a simplified version of C++ (referred to as Arduino language). In order to use the system we require a working computer (Windows, Mac or Linux), and for the setup, access to the Internet.</p>
+<p><br></p>
+<h3 id="the-steps-for-setting-up-for-the-first-time-are" pagestep="pagestep">The steps for setting up for the first time are:</h3>
+<ul>
+<li>
+<p>Download and install the Arduino Integrated Development Environment (<a href="https://docs.arduino.cc/software/ide/#ide-v2" target="_blank" title="">Arduino IDE</a>) - Follow this <a href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing/" target="_blank" title=""><strong>tutorial</strong></a></p>
+</li>
+<li>
+<p>Add, to the Arduino IDE, the board definitions for the ESP32 microcontroller - Follow this <a href="https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-board-manager/" target="_blank" title=""><strong>tutorial</strong></a></p>
+<ul>
+<li>the board definitions we are looking for are "ESP32 by espressif (see screenshot below)"</li>
+</ul>
+</li>
+</ul>
+<p><img alt="screenshot of the Arduino IDE showing board definitions highlighted" src="images/arduino_ide_boards001.jpg" title="" /></p>
+<ul>
+<li>Run the Arduino IDE for the first time and make sure it is configured properly - Follow this <a href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2/" target="_blank" title=""><strong>tutorial</strong></a></li>
+</ul>
+<div class="caution-block">
+<p><strong>Caution</strong> 
+Some window users might need to install drivers for their computers to recognised the ESP32 board properly. Please follow this <a href="https://randomnerdtutorials.com/install-esp32-esp8266-usb-drivers-cp210x-windows/" target="_blank" title="">tutorial</a>
+Caution message</p>
+</div>
+<h3 id="running-the-skin-thermal-stimulator-code-on-the-board" pagestep="pagestep">running the skin thermal stimulator code on the board:</h3>
+<ul>
+<li>
+<p>Once you have the microcontroller properly connected to the computer, we can download the custom code written for this project. If there are updates to the code, or users want to design their own routines, they will need to perform this step again.</p>
+</li>
+<li>
+<p>Download the custom code from its <a href="https://github.com/Sussex-Neuroscience/skin_thermal_stimulator" target="_blank" title="">publicly available repository</a></p>
+<ul>
+<li>
+<p>Click on the Green "code" button, and then on "download zip" (see screenshot below). This will download a single zip file containing everything available in the repository, including our code. <br></p>
+<p><img alt="" src="images/gh_repo001.jpg" title="" /></p>
+</li>
+<li>
+<p>Unzip the file, and navigate to the code folder. In it, navigate to the "main_arduino" folder and double click the file named "main_arduino.ino" (in some computers the termination ".ino" might be omitted).</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>kjsdj</p>
+<!-- GitBuilding Nav -->
+<hr />
+<p><a href="prepare_peltier.html">Previous page</a></p>
+    </div>
+</div>
+<footer class="site-footer">
+    <div class="wrapper">
+        <a target="_blank" rel="noopener noreferrer" href="https://gitbuilding.io">
+    <img class="icon" src="../static/Logo/GitBuilding500x.png" alt="GitBuilding logo">
+    <span class="doc-info">Documentation powered by GitBuilding</span>
+</a>
+
+    </div>
+</footer></body>
+</html>
