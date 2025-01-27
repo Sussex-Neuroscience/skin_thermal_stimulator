@@ -121,9 +121,70 @@
         </div>
         <div class="wrapper">
     <h1 id="prepare-microcontroller">Prepare microcontroller</h1>
+<p><div class=details-header>
+    <div class=details-thumb-outer>
+        <div class=details-thumb>
+            <img alt="page thumbnail" src="images/gh_repo001.jpg" title="" />
+        </div>
+    </div>
+<div class=other-details>
+    <div class=detail>
+        <b>Difficulty:</b> Easy
+    </div>
+    <div class=detail>
+        <b>Time required:</b> 30 Minutes
+    </div>
+    <div class=detail>
+        <b>Skills required:</b>
+        <ul>
+                    <li>Computer use</li>
+                </ul>
+    </div>
+</div>
+</div></p>
+<p>This system runs on a microcontroller called ESP32, specifically, the <a href="https://www.espboards.dev/esp32/esp32-wroom/" target="_blank" title="">ESP32-WROOM</a> model. </p>
+<p>For this application, the microcontroller runs custom code, written in a simplified version of C++ (referred to as Arduino language). In order to use the system we require a working computer (Windows, Mac or Linux), and for the setup, access to the Internet.</p>
+<p><br></p>
+<h3 id="the-steps-for-setting-up-for-the-first-time-are" pagestep="pagestep">The steps for setting up for the first time are:</h3>
 <ul>
-<li>This system runs on an <a href="">ESP32</a>, a microcontroller, which runs C++ code.</li>
+<li>
+<p>Download and install the Arduino Integrated Development Environment (<a href="https://docs.arduino.cc/software/ide/#ide-v2" target="_blank" title="">Arduino IDE</a>) - Follow this <a href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing/" target="_blank" title=""><strong>tutorial</strong></a></p>
+</li>
+<li>
+<p>Add, to the Arduino IDE, the board definitions for the ESP32 microcontroller - Follow this <a href="https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-board-manager/" target="_blank" title=""><strong>tutorial</strong></a></p>
+<ul>
+<li>the board definitions we are looking for are "ESP32 by espressif (see screenshot below)"</li>
 </ul>
+</li>
+</ul>
+<p><img alt="screenshot of the Arduino IDE showing board definitions highlighted" src="images/arduino_ide_boards001.jpg" title="" /></p>
+<ul>
+<li>Run the Arduino IDE for the first time and make sure it is configured properly - Follow this <a href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2/" target="_blank" title=""><strong>tutorial</strong></a></li>
+</ul>
+<div class="caution-block">
+<p><strong>Caution</strong> 
+Some window users might need to install drivers for their computers to recognised the ESP32 board properly. Please follow this <a href="https://randomnerdtutorials.com/install-esp32-esp8266-usb-drivers-cp210x-windows/" target="_blank" title="">tutorial</a>
+Caution message</p>
+</div>
+<h3 id="running-the-skin-thermal-stimulator-code-on-the-board" pagestep="pagestep">running the skin thermal stimulator code on the board:</h3>
+<ul>
+<li>
+<p>Once you have the microcontroller properly connected to the computer, we can download the custom code written for this project. If there are updates to the code, or users want to design their own routines, they will need to perform this step again.</p>
+</li>
+<li>
+<p>Download the custom code from its <a href="https://github.com/Sussex-Neuroscience/skin_thermal_stimulator" target="_blank" title="">publicly available repository</a></p>
+<ul>
+<li>
+<p>Click on the Green "code" button, and then on "download zip" (see screenshot below). This will download a single zip file containing everything available in the repository, including our code. <br></p>
+<p><img alt="" src="images/gh_repo001.jpg" title="" /></p>
+</li>
+<li>
+<p>Unzip the file, and navigate to the code folder. In it, navigate to the "main_arduino" folder and double click the file named "main_arduino.ino" (in some computers the termination ".ino" might be omitted).</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>kjsdj</p>
 <!-- GitBuilding Nav -->
 <hr />
 <p><a href="prepare_peltier.html">Previous page</a></p>
