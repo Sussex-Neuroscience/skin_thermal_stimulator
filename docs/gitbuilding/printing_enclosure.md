@@ -1,16 +1,16 @@
-[M4x10 screws]:Parts.yaml#M4x10PanSteel
-[No. 2 Phillips screwdriver]:Parts.yaml#Screwdriver_Philips_No2
-# Test Page 2
 
-{{BOM}}
 
-## Put screws into the widget {pagestep}
+# Printing enclosure
 
-* Get a [No. 2 Phillips screwdriver]{Qty: 1, Cat: tool} ready
-* Take three [M4x10 screws]{Qty: 3} and screw them into the [widget](widget.md){Qty: 1}
+The enclosure for the electronics in this project is 3D printed. The steps needed to replicate this are below:
 
-## Put more screws into the widget {pagestep}
+- Download the STL files located in XXXX
+- Load the files in your slicer of choice (in the lab we are using a Bambu printer, therefore we use BambuSlicer
+- Print the design. We use PLA, with a layer height of 0.2mm and a density of 15%.
 
-* Find the [screwdriver][No. 2 Phillips screwdriver]{Qty: 1, Cat: tool} again
-* Take two more [M4x10 screws]{Qty: 2} and screw them into the same widget
+When you are done, your enclosure should look like this:
+
+[ADD PHOTO OF PRINTED ENCLOSURE]
+
+
 
