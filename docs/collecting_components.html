@@ -92,17 +92,17 @@
     </li>
 <li class="active">
     <a class="active" href="./collecting_components.html">
-        Test Page 1
+        Using the system
     </a>
     </li>
 <li class="not-active">
     <a class="not-active" href="./printing_enclosure.html">
-        Test Page 2
+        Printing enclosure
     </a>
     </li>
 <li class="not-active">
     <a class="not-active" href="./soldering_boards.html">
-        Test Page 2
+        Soldering boards
     </a>
     </li>
 <li class="not-active">
@@ -120,28 +120,57 @@
             </nav>
         </div>
         <div class="wrapper">
-    <h1 id="test-page-1">Test Page 1</h1>
-<div class="pagebom">
-<h3 id="parts">Parts</h3>
-<ul>
-<li>5 <a Class="bom" href="Parts/M4x10PanSteel.html">M4x10 screws</a> </li>
-<li>1 <a Class="bom" href="widget.html">widget</a> </li>
-</ul>
-<h3 id="tools">Tools</h3>
-<ul>
-<li>1 <a Class="bom" href="Parts/Screwdriver_Philips_No2.html">No. 2 Phillips screwdriver</a> </li>
-</ul>
+    <!-- There should be only one Header per page. You do not need to use all the keys -->
+
+<h1 id="using-the-system">Using the system</h1>
+<p><div class=details-header>
+<div class=other-details>
+    <div class=detail>
+        <b>Difficulty:</b> Easy
+    </div>
+    <div class=detail>
+        <b>Time required:</b> 30 Minutes
+    </div>
+    <div class=detail>
+        <b>Skills required:</b>
+        <ul>
+                    <li>computer use</li>
+                </ul>
+    </div>
 </div>
-<h2 class="page-step" id="put-screws-into-the-widget">Step 1: Put screws into the widget</h2>
+</div></p>
+<p>Currently the system relies on manual input from users to set the final temperature of the stimulator. This is done by using the Arduino-IDE and sending formatted commands using its "serial monitor". This will send a message to the ESP32 microcontroller, which will them perform the necessary actions for the Peltier element heat up or cool down, and for the temperature sensor to send back information to make sure the temperatures are within the expected range. </p>
+<h2 id="steps">Steps:</h2>
 <ul>
-<li>Get a <a href="Parts/Screwdriver_Philips_No2.html">No. 2 Phillips screwdriver</a> ready</li>
-<li>Take three <a href="Parts/M4x10PanSteel.html">M4x10 screws</a> and screw them into the <a href="widget.html">widget</a></li>
+<li>Open the Arduino-IDE</li>
+<li>Select the correct board on the dropdown menu on the top left.</li>
+<li>Click the Serial monitor icon on the top right (see image below)</li>
 </ul>
-<h2 class="page-step" id="put-more-screws-into-the-widget">Step 2: Put more screws into the widget</h2>
+<p><img alt="screenshot of arduino IDE with a highlighted red box on the top right corner" src="images/arduino_ide_serial_monitor001.jpg" title="" /></p>
+<p><br></p>
 <ul>
-<li>Find the <a href="Parts/Screwdriver_Philips_No2.html">screwdriver</a> again</li>
-<li>Take two more <a href="Parts/M4x10PanSteel.html">M4x10 screws</a> and screw them into the same widget</li>
+<li>with the serial monitor open, make sure "9600 baud" is selected on the right dropdown menu and "New Line" is selected on the menu next to it (see image below).  <ul>
+<li>These two things ensure messages going between the microcontroller and the computer are properly formatted.</li>
 </ul>
+</li>
+</ul>
+<p><br></p>
+<p><img alt="" src="images/arduino_ide_serial_monitor_with_text001.jpg" title="" /></p>
+<ul>
+<li>
+<p>if everything is working properly, users should see a series of messages printed in the serial monitor window, namely "current temperature: XX C", indicating that the ESP32 is sending information about the temperature sensor to the computer. </p>
+</li>
+<li>
+<p>to set new temperatures, users need to type a message on the text box of the serial monitor, with the following format (case-sensitive): <code>temp 30</code>. </p>
+<ul>
+<li>Here "temp" is the keyword expected by the ESP32 to set a new temperature. "30" in this case would bring the temperature at the peltier element to 30 degrees Celsius. Please note that there is a space between "temp" and "30".  </li>
+</ul>
+</li>
+</ul>
+<div class="caution-block">
+<p><strong>Caution</strong> </p>
+<p>Remember that the peltier will very likely be attached to someone's skin! So be careful with setting the temperature. For safety reasons, we control the maximum temperature to XXXX, so that even if users mistakenly type something like "temp 100", the system will not allow that to happen.</p>
+</div>
 <!-- GitBuilding Nav -->
 <hr />
 <p><a href="index_BOM.html">Previous page</a> | <a href="printing_enclosure.html">Next page</a></p>
