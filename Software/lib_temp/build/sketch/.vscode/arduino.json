@@ -1,0 +1,18 @@
+#line 1 "C:\\Users\\snn30\\OneDrive - University of Sussex\\Devs\\skin_thermal_stimulator\\Software\\lib_temp\\.vscode\\arduino.json"
+{
+  "port": "COM4",
+  "configuration": "",
+  "output": "build",
+  "board": "arduino:avr:uno",
+  "programmer": "",
+  "useProgrammer": false,
+  "configurationRequired": false,
+  "monitorPortSettings": {
+    "port": "COM4",
+    "baudRate": 9600,
+    "lineEnding": "\r\n",
+    "dataBits": 8,
+    "parity": "none",
+    "stopBits": "one"
+  }
+}
