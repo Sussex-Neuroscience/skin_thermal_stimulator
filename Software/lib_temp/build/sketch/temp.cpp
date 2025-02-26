@@ -48,10 +48,8 @@ double tempa::settemp()
     receivedString.trim(); // Remove any leading or trailing whitespace (including CRLF)
     input = receivedString.toFloat(); // Convert the string to a float 
     heat = (input > preinput) ? true : false;
-    // Serial.println(input);
   }
   preinput = input ;
-  // Serial.println(input);
   return input;
 }
 
@@ -59,32 +57,31 @@ int tempa::setdirection()
 {
   if(heat == false && input < temp )
   { 
-    for (i = 0; i < tempsamples; i++) {
-      pretemp += temp;
-      delay(10);
-    }
-    pretemp = pretemp / tempsamples;
-    if(pretemp < temp)
+    currentMillis = millis();
+    if(currentMillis - previousMillis > interval) 
     {
-      digitalWrite(_pina,LOW);
-      digitalWrite(_pinb,LOW);
-      // pretemp = temp;
-      Serial.println("shutdown");
-   
-    } else
+      pretemp = temp;
+      previousMillis = currentMillis;   
+      
+    }
+    Serial.println(pretemp);
+    if(pretemp >= temp)
     {
       digitalWrite(_pina,LOW);
       digitalWrite(_pinb,HIGH);
-      Serial.println("cooling");
-      // pretemp = temp;
+      // Serial.println("cooling");
       return 1; 
+    } else
+    {
+      // Serial.println("Shutdown");
+      return 0;      
     }     
   }
   else
   {
     digitalWrite(_pina,HIGH);
     digitalWrite(_pinb,LOW);
-    Serial.println("heating");
+    // Serial.println("heating");
     return 0;
   }
  

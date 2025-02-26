@@ -28,8 +28,11 @@ class tempa
     float input = 30;
     float temp = 0;
     float preinput = 0;
-    float pretemp = 0;
     bool heat;
+    long currentMillis;
+    long previousMillis = 0;
+    int interval = 6000;
+    float pretemp = 0;
 
   private:
     int _pina;

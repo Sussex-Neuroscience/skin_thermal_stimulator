@@ -9,9 +9,9 @@ tempa ntc(8,11);
 //Define Variables we'll be connecting to
 double Setpoint, Input, Output;
 //Specify the links and initial tuning parameters
-double Kp=2, Ki=0.5, Kd=0;
+double Kp=15, Ki=4, Kd=1;
 int Direction = 1;
-
+int oldDirection=0;
 PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, P_ON_M, Direction);
 
 #line 15 "C:\\Users\\snn30\\OneDrive - University of Sussex\\Devs\\skin_thermal_stimulator\\Software\\lib_temp\\lib_temp.ino"
@@ -26,19 +26,23 @@ void setup(void) {
   
 }
 void loop(void) {
+  oldDirection = Direction;
   Direction = ntc.setdirection();                  // set the peltier power leads direction and the PID direction
   myPID.SetControllerDirection(Direction);
   Input = ntc.gettemp();                          //get temperature readings
   Setpoint = ntc.settemp();                       // get the set temperature from serial
-  myPID.Compute();                                // control temperature
-  analogWrite(PIN_OUTPUT, Output);                // set the pwm value
+  myPID.Compute();  
+  if (oldDirection!=Direction){
+    Output = 0;
+  }                              // control temperature
+  analogWrite(PIN_OUTPUT, int (Output));                // set the pwm value
 
-  Serial.print("NTC: ");
-  Serial.print(Input);
-  Serial.print("SET: ");
-  Serial.print(Setpoint);
-  Serial.print("PWM: ");
-  Serial.println(Output);
+  // Serial.print("NTC: ");
+  Serial.println(Input);
+  // Serial.print("SET: ");
+  // Serial.print(Setpoint);
+  // Serial.print("PWM: ");
+  // Serial.println(int (Output));
 
-  delay(250);
+  delay(20);
 }
